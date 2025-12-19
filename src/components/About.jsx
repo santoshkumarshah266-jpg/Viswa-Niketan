@@ -35,7 +35,7 @@ const About = () => {
                         {/* Right Side: Large Image */}
                         <div className="principal-image-panel">
                             <img
-                                src="/assets/principal.jpg"
+                                src={`${import.meta.env.BASE_URL}assets/principal.jpg`}
                                 alt="Heramba Raj Kadel"
                                 className="principal-split-img"
                             />

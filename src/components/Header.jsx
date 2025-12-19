@@ -31,7 +31,7 @@ const Header = () => {
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container header-container">
                 <div className="logo">
-                    <img src="/assets/logo.jpg" alt="Viswa Niketan Logo" className="logo-image" />
+                    <img src={`${import.meta.env.BASE_URL}assets/logo.jpg`} alt="Viswa Niketan Logo" className="logo-image" />
                     <div className="logo-text">
                         <h1>Viswa Niketan</h1>
                         <RotatingText

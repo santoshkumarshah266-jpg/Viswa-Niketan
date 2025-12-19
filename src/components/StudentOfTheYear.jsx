@@ -38,7 +38,7 @@ const StudentOfTheYear = ({ isMobile = false }) => {
                                 <div className="soty-image-wrapper">
                                     <div className="soty-image-container">
                                         <img
-                                            src="/assets/student-of-the-year.jpg"
+                                            src={`${import.meta.env.BASE_URL}assets/student-of-the-year.jpg`}
                                             alt="Santosh Kumar Shah - Student of the Year"
                                             className="soty-image"
                                         />

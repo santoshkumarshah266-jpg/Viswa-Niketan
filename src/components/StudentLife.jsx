@@ -32,15 +32,15 @@ const StudentLife = () => {
             <div className="container">
                 <div className="w-full mt-12">
                     <ImageAutoSlider images={[
-                        '/assets/club/group_steps.jpg',
-                        '/assets/club/club3.jpg',
-                        '/assets/club/group_field.jpg',
-                        '/assets/club/club1.jpg',
-                        '/assets/club/award_ceremony.jpg',
-                        '/assets/club/club2.jpg',
-                        '/assets/club/assembly.jpg',
-                        '/assets/club/club4.jpg',
-                        '/assets/club/club5.jpg'
+                        `${import.meta.env.BASE_URL}assets/club/group_steps.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/club3.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/group_field.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/club1.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/award_ceremony.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/club2.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/assembly.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/club4.jpg`,
+                        `${import.meta.env.BASE_URL}assets/club/club5.jpg`
                     ]} />
                 </div>
             </div>

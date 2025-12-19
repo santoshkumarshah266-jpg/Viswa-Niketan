@@ -103,7 +103,7 @@ const Hero = () => {
                     {/* Main Visual Composition */}
                     <div className="composition-wrapper">
                         <div className="main-image-placeholder">
-                            <img src="/assets/hero-bg-new.jpg" alt="Viswa Niketan Excellence" className="hero-main-img" />
+                            <img src={`${import.meta.env.BASE_URL}assets/hero-bg-new.jpg`} alt="Viswa Niketan Excellence" className="hero-main-img" />
                         </div>
 
                         {/* Floating Cards */}

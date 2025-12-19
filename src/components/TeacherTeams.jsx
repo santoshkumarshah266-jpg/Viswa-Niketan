@@ -8,14 +8,14 @@ const teachers = [
         name: "Morning Shift Team",
         role: "The Architects of Early Success",
         desc: "Morning Session • +2 Wing",
-        image: "/assets/team/morning.png",
+        image: `${import.meta.env.BASE_URL}assets/team/morning.png`,
         bio: "Before the city fully wakes, this powerhouse team is already shaping the leaders of tomorrow. With a unique blend of rigorous discipline and warm mentorship, our Morning Shift educators create a high-focus environment where ambition meets opportunity. They don't just teach syllabus; they set the rhythm for a lifetime of achievement.",
     },
     {
         name: "Day Shift Team",
         role: "Champions of Holistic Growth",
         desc: "Day Session • +2 Wing",
-        image: "/assets/team/day.jpg",
+        image: `${import.meta.env.BASE_URL}assets/team/day.jpg`,
         bio: "In the vibrant pulse of the day, our Day Shift faculty transforms classrooms into hubs of innovation and debate. These educators specialize in turning academic concepts into real-world wisdom, fostering a spirited community where every student finds their voice. It's not just about grades; it's about building character under the bright sun.",
     }
 ];
