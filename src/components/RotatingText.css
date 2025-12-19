@@ -1,0 +1,38 @@
+.text-rotate {
+    display: inline-flex;
+    white-space: pre;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    height: 1.25em;
+    /* Ensure height matches font size to prevent layout shifts */
+}
+
+.text-rotate-lines {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-rotate-word {
+    display: flex;
+}
+
+.text-rotate-element {
+    display: inline-block;
+}
+
+.text-rotate-space {
+    white-space: pre;
+}
+
+.text-rotate-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

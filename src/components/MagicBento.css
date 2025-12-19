@@ -1,0 +1,88 @@
+.card-grid {
+    display: grid;
+    /* This will be controlled by parent layout mostly, but defaults are good */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.magic-bento-card {
+    position: relative;
+    background: #ffffff;
+    /* Fallback */
+    border-radius: 20px;
+    padding: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--color-bg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    /* Glow variables */
+    --glow-x: 50%;
+    --glow-y: 50%;
+    --glow-intensity: 0;
+    --glow-radius: 300px;
+    --glow-color: 247, 147, 30;
+
+    background-clip: padding-box;
+    /* Important for border glow */
+    z-index: 1;
+}
+
+/* Border Glow Effect */
+/* Border Glow Effect - Simplified for better browser support */
+.magic-bento-card--border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    /* Slightly larger border */
+    border-radius: 22px;
+    /* Match inner radius + inset */
+    background: radial-gradient(800px circle at var(--glow-x) var(--glow-y),
+            rgba(var(--glow-color), 1),
+            transparent 40%);
+    z-index: -1;
+    /* Behind the card */
+    opacity: var(--glow-intensity);
+    /* Only show when hovering */
+    transition: opacity 0.5s;
+}
+
+/* Ensure container has background to hide the center of the glow */
+.magic-bento-card {
+    background-clip: padding-box;
+    /* ... existing styles ... */
+}
+
+/* Inner overlay for spotlight glow */
+.magic-bento-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--glow-x) var(--glow-y),
+            rgba(var(--glow-color), calc(var(--glow-intensity) * 0.08)) 0%,
+            transparent calc(var(--glow-radius) * 0.8));
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+/* Content styling - ensures it sits above the effects */
+.magic-bento-card>* {
+    position: relative;
+    z-index: 10;
+}
+
+.magic-bento-card--text-autohide .magic-bento-card__description {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.magic-bento-card:hover .magic-bento-card__description {
+    opacity: 1;
+}

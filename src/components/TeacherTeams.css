@@ -1,0 +1,7 @@
+/* TeacherTeams.css */
+/* Custom font util for premium headings if needed */
+.font-heading {
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Fallback or specific font */
+    letter-spacing: -0.02em;
+}

@@ -1,0 +1,258 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    padding: 1.5rem 0;
+}
+
+.header.scrolled {
+    background-color: var(--color-surface);
+    opacity: 0.95;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Space between logo and text */
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Dark mode adjustment */
+body.dark-mode .logo-image {
+    filter: brightness(0) invert(1);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+}
+
+.logo-text h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.logo-text .logo-sub,
+.logo-sub-rotate {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    display: block;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.pb-1 {
+    padding-bottom: 2px;
+}
+
+/* .nav-menu ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+} */
+/* SparkleNavbar handles this internally */
+
+.nav-menu .navigation-menu ul {
+    /* Ensure it aligns well in the header */
+    margin: 0;
+    display: flex;
+    /* Re-add display flex for SparkleNavbar's internal ul */
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    /* Changed to primary for better readability on light bg */
+    position: relative;
+    font-family: var(--font-heading);
+}
+
+.nav-menu a:hover {
+    color: var(--color-accent);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.desktop-cta {
+    display: block;
+}
+
+.mobile-toggle,
+.mobile-cta,
+.mobile-header,
+.overlay {
+    display: none;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Subtle hover background */
+    transform: rotate(15deg);
+}
+
+.header.scrolled .theme-toggle {
+    color: var(--color-primary);
+}
+
+/* Dark mode specific override for better visibility if needed */
+.dark-mode .theme-toggle {
+    color: var(--color-primary);
+    /* Uses the updated light blue */
+}
+
+.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-surface);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1001;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 2rem;
+        align-items: center;
+    }
+
+    .logo-text-mobile {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--color-primary);
+    }
+
+    .close-menu {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-text-main);
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem;
+    }
+
+    .mobile-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-primary);
+    }
+
+    .desktop-cta {
+        display: none;
+    }
+
+    .mobile-cta {
+        display: block;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .mobile-cta button {
+        width: 100%;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+}
