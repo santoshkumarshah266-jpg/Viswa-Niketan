@@ -13,9 +13,13 @@ import TeacherTeams from './components/TeacherTeams';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useIsMobile from './hooks/useIsMobile';
+import useLenis from './hooks/useLenis';
 
 function App() {
   const isMobile = useIsMobile();
+
+  // Initialize Lenis smooth scrolling for both desktop and mobile
+  useLenis();
 
   return (
     <ThemeProvider>
